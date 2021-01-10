@@ -8,3 +8,6 @@ def test(request):
 
 def contacts(request):
     return render(request, "contacts.html")
+
+def second(request):
+    return HttpResponse("test 2 page")
