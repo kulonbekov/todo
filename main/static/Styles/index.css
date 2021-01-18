@@ -22,6 +22,11 @@ section{
     font-size: 18px;
     width: 80%;
 }
+.create_input_book{
+    padding: 12px 5px;
+    font-size: 18px;
+    width: 40%;
+}
 
 .create_button{
     padding: 12px 20px;
