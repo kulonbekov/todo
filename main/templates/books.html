@@ -60,7 +60,11 @@
         </div>
         <div class="todo_container">    
             {% for book in bookstore_list %}
-            <div class="todo_item">
+            <div class="todo_item
+                {% if book.is_favorite %} 
+                    marked
+                {% endif %} 
+            ">
                 <div class="todo_item_header">
                     
                     <h4>{{ book.title }}</h4>
@@ -69,10 +73,14 @@
                 <p>{{ book.author }}</p>
                 <p>{{ book.date }}</p>
                 
-                <!-- <div class="action_buttons">
-                    <img src="{% static 'icons/unmarked.png' %}">
-                    <img src="{% static 'icons/delete.png' %}">
-                </div> -->
+                <div class="action_buttons">
+                    {% if book.is_favorite %}
+                    <a href="{% url 'unmark-book' book.id %}"><img src="{% static 'icons/marked.png' %}"></a>
+                    {% else %}
+                    <a href="{% url 'mark-book' book.id %}"><img src="{% static 'icons/unmarked.png' %}"></a>
+                    {% endif %}
+                    <a href="{% url 'delete-book' book.id %}"><img src="{% static 'icons/delete.png' %}"></a>
+                </div>
                 </div>
             </div> 
             {% endfor %}
