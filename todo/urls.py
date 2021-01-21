@@ -31,6 +31,7 @@ urlpatterns = [
     path("delete-todo/<id>/", delete_todo, name="delete-todo"),
     path("mark-todo/<id>/", mark_todo, name="mark-todo"),
     path("unmark-todo/<id>/", unmark_todo, name="unmark-todo"),
+    path("close-todo/<id>/", close_todo, name="close-todo"),
     path("add-book/", add_book, name="add-book"),
     path("delete-book/<id>/", delete_book, name="delete-book"),
     path("mark-book/<id>/", mark_book, name="mark-book"),

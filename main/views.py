@@ -43,6 +43,12 @@ def unmark_todo(request, id):
     todo.save()
     return redirect(test)
 
+def close_todo(request, id):
+    todo = ToDo.objects.get(id=id)
+    todo.is_closed = not todo.is_closed
+    todo.save()
+    return redirect(test)
+
 def add_book(request):
     form = request.POST
     title = form["book_title"]
